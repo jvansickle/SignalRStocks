@@ -6,6 +6,7 @@
     <TabbedPage.Children>
         
         <Pages:DiscussionPage/>
+        <Pages:StocksPage/>
         
     </TabbedPage.Children>
 </TabbedPage>

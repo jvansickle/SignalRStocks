@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SignalRStocks.Web.Hubs;
+using SignalRStocks.Web.Services;
 
 namespace SignalRStocks.Web
 {
@@ -29,6 +30,7 @@ namespace SignalRStocks.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
             services.AddSignalR();
+            services.AddSingleton<StockGeneratorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +55,11 @@ namespace SignalRStocks.Web
             app.UseSignalR(route =>
             {
                 route.MapHub<DiscussionHub>("/discussionhub");
+                route.MapHub<StockHub>("/stockhub");
             });
+
+            // Get StockGeneratorService singleton to cause initial instantiation
+            app.ApplicationServices.GetService<StockGeneratorService>();
         }
     }
 }

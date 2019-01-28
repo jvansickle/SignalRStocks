@@ -9,5 +9,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Discussion\" />
+    <Folder Include="Stock\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="IService.cs" />
   </ItemGroup>
 </Project>

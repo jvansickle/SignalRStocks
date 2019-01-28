@@ -16,6 +16,7 @@
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SignalRStocks.Contract\SignalRStocks.Contract.csproj" />

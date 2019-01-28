@@ -52,12 +52,12 @@ namespace SignalRStocks.ViewModels
 
             this.discussionService = discussionService;
 
-            this.discussionService.MessageRecieved += HandleMessageRecieved;
+            this.discussionService.MessageReceived += HandleMessageReceived;
 
-            this.discussionService.StartConnection();
+            this.discussionService.StartConnectionAsync();
         }
 
-        void HandleMessageRecieved(string message)
+        void HandleMessageReceived(string message)
         {
             Messages.Add(message);
         }
