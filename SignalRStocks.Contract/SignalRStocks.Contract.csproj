@@ -6,10 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0" />
+    <PackageReference Include="RandomNameGeneratorLibrary" Version="1.2.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Discussion\" />
     <Folder Include="Stock\" />
+    <Folder Include="DirectMessage\" />
+    <Folder Include="User\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="IService.cs" />

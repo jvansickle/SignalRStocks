@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SignalRStocks.Pages.DirectMessagePage"
+             Title="Direct">
+    <ContentPage.Content>
+        
+        <Grid RowSpacing="5"
+              ColumnSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Text="Your Name"
+                   FontSize="8"
+                   Margin="15, 0, 0, 0"/>
+            
+            <Label Text="{Binding FullName}"
+                   Margin="0, 0, 15, 0"
+                   Grid.Column="1"/>
+            
+            <ListView ItemsSource="{Binding ReceivedMessages}"
+                      Grid.Row="1"
+                      Grid.ColumnSpan="2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Message}"
+                                  Detail="{Binding From}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Entry Placeholder="To:"
+                   Text="{Binding To}"
+                   Margin="15, 0, 15, 0"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="2"/>
+            
+            <Grid Margin="15, 0, 15, 15"
+                  ColumnSpacing="3"
+                  Grid.Row="3"
+                  Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <Entry Placeholder="Message:"
+                       Text="{Binding Message}"/>
+                
+                <Button Text="Send"
+                        Command="{Binding SendMessage}"
+                        Grid.Column="1"/>
+                
+            </Grid>
+            
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
