@@ -56,6 +56,7 @@ namespace SignalRStocks.Web
             {
                 route.MapHub<DiscussionHub>("/discussionhub");
                 route.MapHub<StockHub>("/stockhub");
+                route.MapHub<GroupHub>("/grouphub");
             });
 
             // Get StockGeneratorService singleton to cause initial instantiation
